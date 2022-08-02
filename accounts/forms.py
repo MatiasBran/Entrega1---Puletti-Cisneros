@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextFormField
 
 class MyUserCreationForm(UserCreationForm): 
     
@@ -20,4 +21,6 @@ class MyUserEditForm(forms.Form):
     email = forms.EmailField(required=False)
     first_name = forms.CharField(label='Nombre', max_length=30, required=False)
     last_name = forms.CharField(label='Apellido', max_length=30, required=False)       
-    avatar = forms.ImageField(required=False) 
+    avatar = forms.ImageField(required=False)
+    descripcion = RichTextFormField(required=True)
+    link_pagina = forms.CharField(max_length=100, required=False) 

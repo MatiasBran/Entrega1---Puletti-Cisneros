@@ -12,6 +12,8 @@
         <li>Nombre: {{request.user.first_name}} </li>
         <li>Apellido: {{request.user.last_name}} </li>
         <li>Email: {{request.user.email}} </li>
+        <li>descripcion: {{request.user.masdatosusuario.descripcion | safe}} </li>
+        <li>link_pagina: {{request.user.masdatosusuario.link_pagina}} </li>
         <li>
             <p>Avatar:</p>
             {% if request.user.masdatosusuario.avatar %}

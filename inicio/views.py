@@ -71,7 +71,7 @@ class EditarBlog(LoginRequiredMixin, UpdateView):
     model = Blog
     template_name = 'inicio/editar_blog.html'
     success_url = '/listado-blogs/'
-    fields = ['titulo', 'subtitulo', 'contenido', 'autor', 'imagen', 'fecha']
+    fields = ['titulo', 'subtitulo', 'contenido', 'imagen', 'fecha']
 
 
 
