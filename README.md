@@ -1,4 +1,4 @@
-# Intetgrantes:
+# Integrantes:
 - Matias Puletti
 - Mauricio Cisneros
 
