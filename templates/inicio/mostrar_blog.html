@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Caracteristicas{% endblock title %}
+
+{% block header %}
+<a class="" href={% url 'listado_blogs' %}>volver</a>
+
+<p>
+    <li>
+        Titulo: {{blog.titulo}}                    
+    </li>
+    <li>
+        Subtitulo: {{blog.subtitulo}}                    
+    </li>
+    <li>
+        Contenido: {{blog.contenido | safe}}                    
+    </li>
+    
+    <li>
+        Autor: {{blog.autor}}                    
+    </li>
+    <li>
+        <img src={{blog.imagen.url}} alt="" height='80px'>                   
+    </li> 
+    <li>
+        Fecha de creacion: {{blog.fecha}}                    
+    </li>          
+</p>    
+    <a class="btn btn-primary" href={% url 'crear_blog' %}>Crear blog</a>
+
+{% endblock header %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Cambio de contraseña{% endblock title %}
+
+{% block header %}
+<p><a class="btn btn-primary" href={% url 'perfil' %}>Volver</a></p>
+
+<p>
+    <form action={% url 'cambiar_contrasenia' %} method='post'>
+        {% csrf_token %}
+            
+        <table>
+        {{form.as_table}}
+        </table>
+        <button>Guardar</button>
+    </form>
+</p>         
+
+
+{% endblock header %}

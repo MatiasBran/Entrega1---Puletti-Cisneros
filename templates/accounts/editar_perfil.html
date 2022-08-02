@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar blog{% endblock title %}
+
+{% block header %}
+<h1>Edicion del perfil de {{request.user.username}} </h1>
+
+<p><a class="btn btn-primary" href={% url 'perfil' %}>Volver</a></p>
+<p>
+    <form action={% url 'editar_perfil' %} method='post' enctype='multipart/form-data' >
+        {% csrf_token %}
+        
+        <table>
+            {{form.as_table}}
+        </table>        
+        <button class="btn-success ">Editar</button>
+    </form>
+    <p><a href={% url 'cambiar_contrasenia' %}>Cambiar contraseña</a></p>
+    
+</p>
+
+
+{% endblock header %}

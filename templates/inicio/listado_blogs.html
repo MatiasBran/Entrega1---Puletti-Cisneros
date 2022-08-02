@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Blogs{% endblock title %}
+
+{% block header %}
+<p>
+    <form action={% url 'listado_blogs' %}>
+        {{form}}
+        <button class="btn-primary" >Buscar</button>
+    </form> 
+<p>
+    <ul>
+            
+        {% for blog in object_list %}
+            
+        Titulo del blog: {{blog}} 
+        
+        <a class="btn btn-success" href={% url 'mostrar_blog' blog.id %}>Mostrar</a>   
+        <a class="btn btn-success" href={% url 'editar_blog' blog.id %}>Editar</a>            
+        <a class="btn btn-danger" href={% url 'eliminar_blog' blog.id %}>Eliminar</a>           
+        <hr/>
+            
+        {% empty %}
+        <li>No se encontró información.</li>
+        {% endfor %}
+    </ul>
+</p>
+
+
+<a class="btn btn-primary" href={% url 'crear_blog' %}>Crear blog</a>
+
+{% endblock header %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrarse{% endblock title %}
+
+{% block header %}
+
+<p><a class="btn btn-primary" href={% url 'index' %}>Volver a home</a></p>
+
+
+<p>
+    <form action={% url 'registrarse' %} method='post'>
+        {% csrf_token %}
+        
+        <table>
+            {{form.as_table}}
+        </table>
+        <button class="btn-success ">Registrarse</button>
+        
+    </form>
+
+{% endblock header %}

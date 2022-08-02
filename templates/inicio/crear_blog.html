@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear un blog{% endblock title %}
+
+{% block header %}
+
+<h2>
+    <ul>
+        <form action={% url 'crear_blog' %}  method="post" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <table>
+                {{form.media}}
+                {{form.as_table}}
+            </table>
+            <p><input type="submit" value="Ingresar"></p>    
+        </form>                  
+    </ul>            
+</h2> 
+
+{% endblock header %}
